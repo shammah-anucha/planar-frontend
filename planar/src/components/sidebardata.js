@@ -20,12 +20,34 @@ export const SidebarData = [
     title: "Roster",
     icon: <TableRowsIcon />,
     link: "/roster",
+    children: [
+      {
+        title: "Other Volunteers",
+        link: "/other_volunteers",
+      },
+
+      {
+        title: "Cancel Roster",
+        link: "/cancel_roster",
+      },
+    ],
   },
 
   {
     title: "Unavailability",
     icon: <EventBusyIcon />,
     link: "/unavailability",
+    children: [
+      {
+        title: "Single Day",
+        link: "/unavailability/single_day",
+      },
+
+      {
+        title: "Vacations",
+        link: "/unavailability/vacations",
+      },
+    ],
   },
 
   {
@@ -62,17 +84,5 @@ export const SidebarData = [
     title: "Settings",
     icon: <SettingsIcon />,
     link: "/settings",
-  },
-];
-
-export const DropdownData = [
-  {
-    title: "Other Volunteers",
-    link: "/other_volunteers",
-  },
-
-  {
-    title: "Cancel Roster",
-    link: "/cancel_roster",
   },
 ];
