@@ -8,27 +8,31 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import PersonIcon from "@mui/icons-material/Person";
 import LogoutIcon from "@mui/icons-material/Logout";
 import SettingsIcon from "@mui/icons-material/Settings";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 export const SidebarData = [
   {
     title: "Home",
     icon: <HomeIcon />,
-    link: "/home",
+    path: "/home",
   },
 
   {
     title: "Roster",
     icon: <TableRowsIcon />,
-    link: "/roster",
-    children: [
+    path: "/roster",
+    iconClosed: <ArrowForwardIosIcon />,
+    iconOpen: <KeyboardArrowDownIcon />,
+    subNav: [
       {
         title: "Other Volunteers",
-        link: "/other_volunteers",
+        path: "/other_volunteers",
       },
 
       {
         title: "Cancel Roster",
-        link: "/cancel_roster",
+        path: "/cancel_roster",
       },
     ],
   },
@@ -36,16 +40,18 @@ export const SidebarData = [
   {
     title: "Unavailability",
     icon: <EventBusyIcon />,
-    link: "/unavailability",
-    children: [
+    path: "/unavailability",
+    iconClosed: <ArrowForwardIosIcon />,
+    iconOpen: <KeyboardArrowDownIcon />,
+    subNav: [
       {
         title: "Single Day",
-        link: "/unavailability/single_day",
+        path: "/unavailability/single_day",
       },
 
       {
         title: "Vacations",
-        link: "/unavailability/vacations",
+        path: "/unavailability/vacations",
       },
     ],
   },
@@ -53,36 +59,36 @@ export const SidebarData = [
   {
     title: "Upcoming Events",
     icon: <EventIcon />,
-    link: "/upcoming_events",
+    path: "/upcoming_events",
   },
 
   {
     title: "Calendar",
     icon: <CalendarMonthIcon />,
-    link: "/calendar",
+    path: "/calendar",
   },
 
   {
     title: "Inbox",
     icon: <InboxIcon />,
-    link: "/inbox",
+    path: "/inbox",
   },
 
   {
     title: "Profile",
     icon: <PersonIcon />,
-    link: "/profile",
+    path: "/profile",
   },
 
   {
     title: "Logout",
     icon: <LogoutIcon />,
-    link: "/logout",
+    path: "/logout",
   },
 
   {
     title: "Settings",
     icon: <SettingsIcon />,
-    link: "/settings",
+    path: "/settings",
   },
 ];
