@@ -18,6 +18,14 @@ const SidebarLink = styled(Link)`
     cursor: pointer;
     background-color: #d9d9d9;
   }
+
+  &:nth-last-child(2) {
+    margin-top: 600px;
+  }
+
+  &:active {
+    background-color: #d9d9d9;
+  }
 `;
 
 const SidebarLabel = styled.span`
@@ -45,7 +53,11 @@ const Submenu = ({ item }) => {
 
   return (
     <>
-      <SidebarLink to={item.path} onClick={item.subNav && showSubnav}>
+      <SidebarLink
+        to={item.path}
+        onClick={item.subNav && showSubnav}
+        id={window.location.pathname === item.path ? "active" : ""}
+      >
         <div id="itemlist">
           <div id="icon">{item.icon}</div>
           <SidebarLabel className="titles">{item.title}</SidebarLabel>
@@ -72,4 +84,35 @@ const Submenu = ({ item }) => {
 
 export default Submenu;
 
-// idea add the bottom to the data
+// function Sidebar() {
+//   const [open, setOpen] = useState(false);
+//   return (
+//     <div className="Sidebar">
+//       <ul className={open ? "SidebarList open" : "SidebarList"}>
+//         {SidebarData.map((val, key) => {
+//           return (
+//             <li
+//               key={key}
+//               className="row"
+//               id={window.location.pathname === val.link ? "active" : ""}
+//               onClick={() => {
+//                 window.location.pathname = val.link;
+//               }}
+//             >
+//               {" "}
+//               <div className="sidebar-content">hello</div>{" "}
+//               <div id="icon">{val.icon}</div> <div id="title">{val.title}</div>{" "}
+//               <div>
+//                 <i className="dropdown" onClick={() => setOpen(!open)}>
+//                   <ArrowForwardIosIcon />
+//                 </i>
+//               </div>
+//             </li>
+//           );
+//         })}
+//       </ul>
+//     </div>
+//   );
+// }
+
+// export default Sidebar;

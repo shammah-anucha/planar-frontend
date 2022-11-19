@@ -67,9 +67,16 @@ const Sidebar = () => {
             <NavIcon to="#">
               <CloseIcon onClick={showSidebar} />
             </NavIcon>
-            {SidebarData.map((item, index) => {
-              return <Submenu item={item} key={index} />;
-            })}
+            <div>
+              <ul>
+                <li>
+                  {" "}
+                  {SidebarData.map((item, index) => {
+                    return <Submenu item={item} key={index} />;
+                  })}
+                </li>
+              </ul>
+            </div>
           </SidebarWrap>
         </SidebarNav>
       </Body>
@@ -118,3 +125,46 @@ export default Sidebar;
 // }
 
 // export default Sidebar;
+
+// const Sidebar = () => {
+//   const [sidebar, setSidebar] = useState(false);
+
+//   const showSidebar = () => setSidebar(!sidebar);
+
+//   return (
+//     <>
+//       {/* <IconContext.Provider value={{ color: "#36736F" }}> */}
+//       <Body>
+//         <Nav>
+//           <NavIcon to="#">
+//             <DensityMediumIcon onClick={showSidebar} />
+//           </NavIcon>
+//         </Nav>
+//         <SidebarNav sidebar={sidebar}>
+//           <SidebarWrap>
+//             <NavIcon to="#">
+//               <CloseIcon onClick={showSidebar} />
+//             </NavIcon>
+//             <div>
+//               <ul>
+//                 <li>
+//                   {" "}
+//                   {SidebarData.map((item, index) => {
+//                     return (
+//                       <Submenu
+//                         item={item}
+//                         key={index}
+//                         // id={window.location.pathname === item.path ? "active" : ""}
+//                       />
+//                     );
+//                   })}
+//                 </li>
+//               </ul>
+//             </div>
+//           </SidebarWrap>
+//         </SidebarNav>
+//       </Body>
+//       {/* </IconContext.Provider> */}
+//     </>
+//   );
+// };

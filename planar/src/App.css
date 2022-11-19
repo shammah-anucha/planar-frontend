@@ -6,10 +6,6 @@
   box-sizing: border-box;
 }
 
-.NavIcon .closed {
-  color: grey;
-}
-
 #icon {
   color: #36736f;
 }
@@ -20,10 +16,9 @@
   align-items: center;
 }
 
-/* .div:last-child(n + 1),
-.div:last-child(n + 1) {
-  color: pink;
-} */
+.SidebarLink #active {
+  background-color: #d9d9d9;
+}
 
 /* .nav-menu-items {
   height: 100vh;
@@ -37,9 +32,9 @@
 /* z-index: 10; */
 /* } */
 
-.nav-menu {
+/* .nav-menu {
   background-color: #d9d9d9;
-}
+} */
 
 /* #icon:nth-last-child(2),
 .titles:nth-last-child(2) {
