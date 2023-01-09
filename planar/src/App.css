@@ -16,10 +16,17 @@
   align-items: center;
 }
 
-.SidebarLink #active {
+#arrow {
+  color: #a1a1a1;
+}
+
+#active {
   background-color: #d9d9d9;
 }
 
+.addNew {
+  color: #36736f;
+}
 /* .nav-menu-items {
   height: 100vh;
   width: 300px;

@@ -6,7 +6,6 @@ import DensityMediumIcon from "@mui/icons-material/DensityMedium";
 import CloseIcon from "@mui/icons-material/Close";
 import { SidebarData } from "./sidebardata";
 import Submenu from "./submenu";
-import { IconContext } from "react-icons";
 
 const Body = styled.div`
   width: 100vw;
@@ -46,6 +45,10 @@ const SidebarNav = styled.nav`
 
 const SidebarWrap = styled.div`
   width: 100%;
+
+  &#active {
+    background-color: #d9d9d9;
+  }
 `;
 
 const Sidebar = () => {
@@ -55,7 +58,6 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* <IconContext.Provider value={{ color: "#36736F" }}> */}
       <Body>
         <Nav>
           <NavIcon to="#">
@@ -80,7 +82,6 @@ const Sidebar = () => {
           </SidebarWrap>
         </SidebarNav>
       </Body>
-      {/* </IconContext.Provider> */}
     </>
   );
 };

@@ -20,11 +20,14 @@ const SidebarLink = styled(Link)`
   }
 
   &:nth-last-child(2) {
+    position: sticky;
     margin-top: 600px;
   }
+`;
 
-  &:active {
-    background-color: #d9d9d9;
+const Sidebars = styled.div`
+  &#active {
+    background-color: pink;
   }
 `;
 
@@ -45,6 +48,10 @@ const DropdownLink = styled(Link)`
     background-color: #d9d9d9;
     cursor: pointer;
   }
+
+  //   &#use {
+  //     background-color: #d9d9d9;
+  //   }
 `;
 
 const Submenu = ({ item }) => {
@@ -52,17 +59,16 @@ const Submenu = ({ item }) => {
   const showSubnav = () => setSubnav(!subnav);
 
   return (
-    <>
-      <SidebarLink
-        to={item.path}
-        onClick={item.subNav && showSubnav}
-        id={window.location.pathname === item.path ? "active" : ""}
-      >
+    <Sidebars
+      id={window.location.pathname === item.path ? "active" : ""}
+      // onclick={(window.location.pathname = item.path)}
+    >
+      <SidebarLink to={item.path} onClick={item.subNav && showSubnav}>
         <div id="itemlist">
           <div id="icon">{item.icon}</div>
           <SidebarLabel className="titles">{item.title}</SidebarLabel>
         </div>
-        <div>
+        <div id="arrow">
           {item.subNav && subnav
             ? item.iconOpen
             : item.subNav
@@ -78,11 +84,15 @@ const Submenu = ({ item }) => {
             </DropdownLink>
           );
         })}
-    </>
+    </Sidebars>
   );
 };
 
 export default Submenu;
+
+// function back { (
+//   () => {window.location.pathname = item.path})
+// }
 
 // function Sidebar() {
 //   const [open, setOpen] = useState(false);

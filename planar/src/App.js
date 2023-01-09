@@ -1,11 +1,19 @@
 import "./App.css";
-import Sidebar from "./components/sidebar";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// import Sidebar from "./components/sidebar";
+import Unavailability from "./components/unavailability/unavailability";
+import { BrowserRouter as Router, useNavigate } from "react-router-dom";
 
 function App() {
+  // const navigate = useNavigate();
+
+  // const navigateToVacations = () => {
+  //   // 👇️ navigate to /vacations
+  //   navigate("/unavailability/vacations");
+  // };
   return (
     <Router className="App">
-      <Sidebar />
+      {/* <Sidebar /> */}
+      <Unavailability />
     </Router>
   );
 }
